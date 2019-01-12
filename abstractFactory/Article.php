@@ -1,13 +1,19 @@
 <?php 
-
+/**
+ * 
+ * Класс клиент, наследуется от AbstractArticle
+ * задаем все нужные параметры и можем делать две версии
+ * статьи Rss и Html с помощью абстрактной фабрики
+ *
+ */
 class Article extends AbstractArticle
 {
 	// Шаблон - по которому будем отрисовывать статью
-	private $abstractFactory;
+	private $factory;
 	
-	public function setAbstractFactory(AbstractFactory $abstractFactory)
+	public function setFactory(AbstractFactory $factory)
 	{
-		$this->abstractFactory = $abstractFactory;
+		$this->factory = $factory;
 		return $this;
 	}
 	
@@ -15,8 +21,8 @@ class Article extends AbstractArticle
 		
 		$result = '';
 		
-		if (isset($this->abstractFactory)) {
-			$article = $this->abstractFactory->createArticle($this->name, $this->text);
+		if (isset($this->factory)) {
+			$article = $this->factory->createArticle($this->name, $this->text);
 			$article->setTitle($this->title);
 			$article->setKeyWords($this->keyWords);
 			$result = $article->render();

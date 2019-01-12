@@ -17,7 +17,7 @@ $article->setTitle('Шок! Новая статья Скидки');
 $article->setKeyWords('статья, статья москва, первая статья, купить статью в москве');
 
 // Создаем html версию статьи
-echo $article->setAbstractFactory($htmlFactory)->render();
+echo $article->setFactory($htmlFactory)->render();
 
 // Создаем rss версию статью
-echo $article->setAbstractFactory($rssFactory)->render();
+echo $article->setFactory($rssFactory)->render();
