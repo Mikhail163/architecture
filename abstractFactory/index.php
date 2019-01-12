@@ -12,6 +12,8 @@ require_once 'Article.php';
 $htmlFactory = new HtmlFactory();
 $rssFactory = new RssFactory();
 
+// Создаем объект клиент, для создания статьи в различных вариантах,
+// в нашем случае Rss и Html
 $article = new Article('Имя первой статьи', 'Контент первой статьи созданный по последнему слову техники');
 $article->setTitle('Шок! Новая статья Скидки');
 $article->setKeyWords('статья, статья москва, первая статья, купить статью в москве');
