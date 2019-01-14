@@ -11,4 +11,4 @@ $main->add(new Header('header'));
 $main->add(new Content('content'));
 $main->add(new Footer('footer'));
 
-echo $main->render();
+$main->display();
