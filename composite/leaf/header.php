@@ -1,5 +1,7 @@
 <?php 
-
+/**
+ * Класс обработки шапки сайта
+ */
 class Header extends component 
 {
 	public function render(): string {
